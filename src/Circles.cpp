@@ -7,15 +7,27 @@
 
 #include "Circles.hpp"
 
-void Circles::setup(){
+int i;
+ofColor colour(0, 0, 0);
 
+
+void Circles::setup(){
+	i = 0;
 }
 
 void Circles::update(){
-    
+	i++;
+	if (i == 100) {
+
+		colour.r = ofRandom(255);
+		colour.g = ofRandom(255);
+		colour.b = ofRandom(255);
+		i = 0;
+
+	}
 }
 
 void Circles::draw(){
-	ofSetColor(0);
+	ofSetColor(colour);
 	ofDrawCircle(150, 150, 100);
 }
